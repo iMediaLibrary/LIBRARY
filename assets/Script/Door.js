@@ -36,7 +36,7 @@ cc.Class({
 
     // onLoad () {},
 
-    start () {
+    start:function () {
 
     },
 
