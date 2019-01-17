@@ -11,6 +11,9 @@
 cc.Class({
     extends: cc.Component,
 
+
+
+
     properties: {
         // foo: {
         //     // ATTRIBUTES:
