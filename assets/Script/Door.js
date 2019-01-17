@@ -2,6 +2,9 @@
 cc.Class({
     extends: cc.Component,
 
+
+
+
     properties: {
         _noHeadBackground:null,
 
@@ -18,7 +21,7 @@ cc.Class({
      
     },
 
-    start () {
+    start:function () {
 
     },
 
