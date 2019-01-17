@@ -1,41 +1,58 @@
-// Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        _noHeadBackground:null,
+
+       
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+
+        this._noHeadBackground = cc.find("Canvas/bg");
+        this._noHeadBackground.active = false;
+      
+     
+    },
 
     start () {
 
     },
+
+
+
+    showWarnAlertText: function () {
+     
+        if(Index.isEnter){
+            console.log("转换场景");
+            //转换场景
+        }else{
+            Alert.show("警告","身份识别失败",function(){
+                console.log("123421312311");
+            });
+        }
+    
+    },
+
+    showHeadAlert:function(){
+        if(Index.isEnter){
+            Index.score += 0;
+        }else{
+            Index.score += 5;
+            Alert.show("恭喜","获得头套",function(){
+                console.log("123421312311");
+            });
+        }
+
+        Index.isEnter = true;
+       
+        console.log(Index.score);
+        this._noHeadBackground.active = true;
+    }
+
 
     // update (dt) {},
 });
