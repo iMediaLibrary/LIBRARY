@@ -30,6 +30,8 @@ cc.Class({
     showWarnAlertText: function () {
      
         if(Index.isEnter){
+
+            cc.director.loadScene("Check");
             console.log("转换场景");
             //转换场景
         }else{
